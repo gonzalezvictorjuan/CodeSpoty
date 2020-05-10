@@ -29,4 +29,12 @@ Agrego las librerias en el "angular.json"
         "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
 ```
-    
+
+Genero Componentes
+
+```
+ng g c componentes/home --skipTests=true
+ng g c componentes/buscar --skipTests=true
+ng g c componentes/artista --skipTests=true
+ng g c componentes/compartido/navbar --skipTests=true
+```
