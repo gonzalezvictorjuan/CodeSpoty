@@ -14,6 +14,7 @@ ng new CodeSpoty
 npm install bootstrap --save
 npm install jquery --save
 npm install popper.js --save
+npm install @fortawesome/fontawesome-free --save
 ```
 
 ### Agrego las librerias en el "angular.json"
@@ -21,11 +22,13 @@ npm install popper.js --save
 ```
     "styles": [
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
-        ...
+        "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        "src/styles.scss"
     ],
     "scripts": [
         "node_modules/jquery/dist/jquery.slim.min.js",
         "node_modules/popper.js/dist/umd/popper.min.js",
+        "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
         "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ]
 ```
@@ -38,6 +41,7 @@ ng g c componentes/buscar --skipTests=true
 ng g c componentes/artista --skipTests=true
 ng g c componentes/compartido/navbar --skipTests=true
 ng g c componentes/compartido/tarjetas --skipTests=true
+ng g c componentes/compartido/loading --skipTests=true
 ```
 
 ### Genero Servicio
