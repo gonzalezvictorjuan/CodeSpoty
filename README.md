@@ -7,7 +7,7 @@ Este Proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Comandos Utilizados durante el desarrollo
 
-Creacion de proyecto 📋
+### Creacion de proyecto 📋
 
 ```
 ng new CodeSpoty
@@ -16,7 +16,7 @@ npm install jquery --save
 npm install popper.js --save
 ```
 
-Agrego las librerias en el "angular.json"
+### Agrego las librerias en el "angular.json"
 
 ```
     "styles": [
@@ -30,11 +30,24 @@ Agrego las librerias en el "angular.json"
     ]
 ```
 
-Genero Componentes
+### Genero Componentes
 
 ```
 ng g c componentes/home --skipTests=true
 ng g c componentes/buscar --skipTests=true
 ng g c componentes/artista --skipTests=true
 ng g c componentes/compartido/navbar --skipTests=true
+ng g c componentes/compartido/tarjetas --skipTests=true
+```
+
+### Genero Servicio
+
+```
+ng g s servicios/spotify --skipTests=true
+```
+
+### Genero Pipe
+
+```
+ng g p pipes/noimage --skipTests=true
 ```
