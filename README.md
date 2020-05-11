@@ -36,18 +36,18 @@ npm install @fortawesome/fontawesome-free --save
 ### Genero Componentes
 
 ```
-ng g c componentes/home --skipTests=true
-ng g c componentes/buscar --skipTests=true
-ng g c componentes/artista --skipTests=true
-ng g c componentes/compartido/navbar --skipTests=true
-ng g c componentes/compartido/tarjetas --skipTests=true
-ng g c componentes/compartido/loading --skipTests=true
+ng g c components/home --skipTests=true
+ng g c components/buscar --skipTests=true
+ng g c components/artista --skipTests=true
+ng g c components/compartido/navbar --skipTests=true
+ng g c components/compartido/tarjetas --skipTests=true
+ng g c components/compartido/loading --skipTests=true
 ```
 
 ### Genero Servicio
 
 ```
-ng g s servicios/spotify --skipTests=true
+ng g s services/spotify --skipTests=true
 ```
 
 ### Genero Pipe
