@@ -42,6 +42,7 @@ ng g c components/artista --skipTests=true
 ng g c components/compartido/navbar --skipTests=true
 ng g c components/compartido/tarjetas --skipTests=true
 ng g c components/compartido/loading --skipTests=true
+ng g c components/compartido/error --skipTests=true
 ```
 
 ### Genero Servicio
@@ -54,4 +55,5 @@ ng g s services/spotify --skipTests=true
 
 ```
 ng g p pipes/noimage --skipTests=true
+ng g p pipes/domseguro --skipTests=true
 ```

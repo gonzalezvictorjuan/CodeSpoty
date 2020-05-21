@@ -7,6 +7,7 @@
       4
     ],
     "triple-equals": false,
+    "no-shadowed-variable": false,
     "variable-name": false,
     "no-string-literal": false,
     "array-type": false,
@@ -62,7 +63,7 @@
     ],
     "no-empty": false,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
     "no-non-null-assertion": true,
