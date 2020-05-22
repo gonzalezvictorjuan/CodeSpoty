@@ -1,3 +1,4 @@
+import { AccessTokenService } from './access-token.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -5,18 +6,13 @@ import { map } from 'rxjs/operators';
 
 const base_url = 'https://api.spotify.com/v1';
 
-/**
- * En este punto es necesario generar el token por fuera del sistema.
- * TODO: Esto se tiene que implementar de otra manera.
- */
-const token = 'Bearer ' + 'BQBpPSXm06_pZ8ufGQgYnw0mIBz7gHKYO54wnczzFuRBr_KNMzahEbLbveCLkdY7ERqHNHPGAsD1Vn4Gszo';
-
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 
-    constructor( private _http: HttpClient ) { }
+    constructor( private _http: HttpClient,
+                 private _accessToken: AccessTokenService ) { }
 
     /**
      * Encargado de recuperar las nuevas canciones.
@@ -98,7 +94,7 @@ export class SpotifyService {
         const url = base_url + query;
 
         const headers = new HttpHeaders({
-            'Authorization': token
+            'Authorization': this._accessToken.getToken()
         });
 
         return this._http.get(url, { headers });

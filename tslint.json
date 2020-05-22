@@ -7,6 +7,8 @@
       4
     ],
     "triple-equals": false,
+    "prefer-const": false,
+    "one-variable-per-declaration": false,
     "no-shadowed-variable": false,
     "variable-name": false,
     "no-string-literal": false,

@@ -7,6 +7,16 @@ Este Proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Comandos Utilizados durante el desarrollo
 
+### Antes de comenzar
+
+Es necesario crear un proyecto desde el sitio de [Spotify](https://developer.spotify.com/dashboard/)
+- Login
+- Create a Client ID (Completamos los datos).
+- Dentro del proyecto obtendremos el Client ID & Client Secret para utilizar en nuestro proyecto.
+- Edit Settings
+- Redirect URIs >> Agregamos http://localhost:4200 y posteriormente la url de "producción".
+
+
 ### Creacion de proyecto 📋
 
 ```
@@ -43,15 +53,19 @@ ng g c components/compartido/navbar --skipTests=true
 ng g c components/compartido/tarjetas --skipTests=true
 ng g c components/compartido/loading --skipTests=true
 ng g c components/compartido/error --skipTests=true
+ng g c components/access_token --skipTests=true
 ```
 
-### Genero Servicio
+### Genero Servicios
 
 ```
 ng g s services/spotify --skipTests=true
+ng g s services/access-token --skipTests=true
+ng g s services/route-previo --skipTests=true
+ng g g services/auth --skipTests=true
 ```
 
-### Genero Pipe
+### Genero Pipes
 
 ```
 ng g p pipes/noimage --skipTests=true

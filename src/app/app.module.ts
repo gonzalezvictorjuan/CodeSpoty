@@ -17,6 +17,7 @@ import { LoadingComponent } from './components/compartido/loading/loading.compon
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { ErrorComponent } from './components/compartido/error/error.component';
+import { AccessTokenComponent } from './components/access-token/access-token.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ErrorComponent } from './components/compartido/error/error.component';
     DomseguroPipe,
     TarjetasComponent,
     LoadingComponent,
-    ErrorComponent
+    ErrorComponent,
+    AccessTokenComponent
   ],
   imports: [
     BrowserModule,

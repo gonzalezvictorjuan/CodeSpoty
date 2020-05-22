@@ -1,5 +1,6 @@
+import { RoutePrevioService } from './../../services/route-previo.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -25,7 +26,9 @@ export class ArtistaComponent implements OnInit, OnDestroy {
     readonly base_spotify_follow: string = 'https://open.spotify.com/follow/1/?uri=spotify:artist:';
 
     constructor( private _activatedRoute: ActivatedRoute,
-                 private _spotify: SpotifyService
+                 private _spotify: SpotifyService,
+                 private _router: Router,
+                 private _routePrevio: RoutePrevioService,
                 ) {
         this.error = false;
 
@@ -67,6 +70,10 @@ export class ArtistaComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
+    }
+
+    volver(): void {
+        this._router.navigate([this._routePrevio.previaUrl]);
     }
 
     transformUrl(uri: string): string {
