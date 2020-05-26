@@ -1,0 +1,13 @@
+.card {
+    .card-header {
+        background: linear-gradient(transparent,rgba(0,0,0,.5));
+        background-color: rgb(23, 30, 54);
+    }
+
+    .card-body {
+        background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+        background-color: rgb(23, 30, 54);
+    }
+
+    border: none;
+}
