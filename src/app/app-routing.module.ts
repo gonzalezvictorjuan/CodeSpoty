@@ -1,3 +1,4 @@
+import { PlaylistComponent } from './components/playlist/playlist.component';
 import { AuthGuard } from './services/auth.guard';
 import { AccessTokenComponent } from './components/access-token/access-token.component';
 import { NgModule } from '@angular/core';
@@ -8,10 +9,11 @@ import { ArtistaComponent } from './components/artista/artista.component';
 
 
 const routes: Routes = [
-    { path: 'home',         component: HomeComponent,       canActivate: [AuthGuard] },
-    { path: 'buscar',       component: BuscarComponent,     canActivate: [AuthGuard] },
-    { path: 'artista/:id',  component: ArtistaComponent,    canActivate: [AuthGuard] },
-    { path: 'access_token', component: AccessTokenComponent },
+    { path: 'home',                component: HomeComponent,     canActivate: [AuthGuard] },
+    { path: 'buscar',              component: BuscarComponent,   canActivate: [AuthGuard] },
+    { path: 'embajadoresdecodigo', component: PlaylistComponent, canActivate: [AuthGuard] },
+    { path: 'artista/:id',         component: ArtistaComponent,  canActivate: [AuthGuard] },
+    { path: 'access_token',        component: AccessTokenComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

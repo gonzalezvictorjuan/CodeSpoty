@@ -54,6 +54,7 @@ ng g c components/compartido/tarjetas --skipTests=true
 ng g c components/compartido/loading --skipTests=true
 ng g c components/compartido/error --skipTests=true
 ng g c components/access_token --skipTests=true
+ng g c components/playlist --skipTests=true
 ```
 
 ### Genero Servicios
