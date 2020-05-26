@@ -72,3 +72,17 @@ ng g g services/auth --skipTests=true
 ng g p pipes/noimage --skipTests=true
 ng g p pipes/domseguro --skipTests=true
 ```
+
+### Hosting en GitHub
+
+Aegurar que el ropo remoto este seteado, se puede revisar con ```git remote -v``` 
+
+```
+git remote add origin https://github.com/<username>/<repositoryname>.git
+```
+
+## Agregar este paquete 
+```ng add angular-cli-ghpages```
+
+## Para deployar en GitHub usar:
+```ng deploy --base-href=/CodeSpoty/```
