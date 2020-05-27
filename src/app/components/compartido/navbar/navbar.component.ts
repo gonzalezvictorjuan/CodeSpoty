@@ -1,16 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
     @Input() title: string;
+
+    @ViewChild('toggler') toggler: ElementRef<HTMLElement>;
 
     constructor() { }
 
-    ngOnInit(): void {
+    /**
+     * Oculto la navbar en mobile luego de realizar un click en alguno de los elementos.
+     */
+    clickToggle(): void {
+        if (this.toggler.nativeElement['ariaExpanded'] != 'false') {
+            this.toggler.nativeElement.click();
+        }
     }
 
 }

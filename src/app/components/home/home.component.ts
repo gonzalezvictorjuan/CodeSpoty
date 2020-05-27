@@ -3,11 +3,10 @@ import { SpotifyService } from '../../services/spotify.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: []
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
@@ -33,7 +32,12 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.loading = false;
                 },
                 (error) => {
-                    this.textoError = error.error.error.message || 'Error con la API de Spotify';
+                    if (error.error.error.message) {
+                        this.textoError = error.error.error.message;
+                    } else {
+                        this.textoError = 'Error con la API de Spotify';
+                    }
+
                     this.loading = false;
                     this.error = true;
                 }

@@ -62,7 +62,11 @@ export class ArtistaComponent implements OnInit, OnDestroy {
                 console.log(error);
                 this.error = true;
                 this.loading = false;
-                this.textoError = error.error.error.message || 'Error con la API de Spotify';
+                if (error.error.error.message) {
+                    this.textoError = error.error.error.message;
+                } else {
+                    this.textoError = 'Error con la API de Spotify';
+                }
             }
         );
     }
@@ -124,7 +128,11 @@ export class ArtistaComponent implements OnInit, OnDestroy {
     //                 console.log(error);
     //                 this.loading = false;
     //                 this.error = true;
-    //                 this.textoError = error.error.error.message || 'Error con la API de Spotify';
+    //                 if (error.error.error.message) {
+    //                     this.textoError = error.error.error.message;
+    //                 } else {
+    //                     this.textoError = 'Error con la API de Spotify';
+    //                 }
     //             }
     //         );
     // }
@@ -143,7 +151,11 @@ export class ArtistaComponent implements OnInit, OnDestroy {
     //                 console.log(error);
     //                 this.loading = false;
     //                 this.error = true;
-    //                 this.textoError = error.error.error.message || 'Error con la API de Spotify';
+    //                 if (error.error.error.message) {
+    //                     this.textoError = error.error.error.message;
+    //                 } else {
+    //                     this.textoError = 'Error con la API de Spotify';
+    //                 }
     //             }
     //         );
     // }

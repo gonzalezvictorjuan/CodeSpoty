@@ -21,6 +21,8 @@ export class AppComponent {
                 private _router: Router,
                 private _location: Location
         ) {
+
+        // Registro las URL, guardo la actual y la anterior.
         this._routerPrevio.registrarUrls();
 
         this._router.events.subscribe(

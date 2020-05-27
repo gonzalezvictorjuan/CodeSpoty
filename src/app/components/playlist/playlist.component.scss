@@ -1,13 +1,19 @@
-.card {
-    .card-header {
-        background: linear-gradient(transparent,rgba(0,0,0,.5));
-        background-color: rgb(23, 30, 54);
-    }
+app-loading + .container-fluid {
+    margin-top: 3rem
+}
 
-    .card-body {
-        background-image: linear-gradient(rgba(0,0,0,.6),#121212);
-        background-color: rgb(23, 30, 54);
-    }
+.container-fluid {
+    .card {
+        .card-header {
+            background: linear-gradient(transparent,rgba(0,0,0,.5));
+            background-color: rgb(23, 30, 54);
+        }
 
-    border: none;
+        .card-body {
+            background-image: linear-gradient(rgba(0,0,0,.6),#121212);
+            background-color: rgb(23, 30, 54);
+        }
+
+        border: none;
+    }
 }

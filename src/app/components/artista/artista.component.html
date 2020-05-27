@@ -2,8 +2,8 @@
 
 <app-error *ngIf="error" [mensaje]="textoError"></app-error>
 
-<div *ngIf="!error">
-    <div class="artista row animated fadeIn" *ngIf="!loading">
+<div *ngIf="!error && !loading">
+    <div class="artista row animated fadeIn">
         <div class="col-2">
             <img [src]="artista.images | noimage" alt="artista" class="img-thumbnail img-circle">
         </div>
@@ -30,13 +30,13 @@
         </div>
     </div>
     
-    <div class="tracks row mt-5" *ngIf="!loading">
+    <div class="tracks row mt-5">
         <div class="col">
             <table class="table">
                 <thead>
                     <tr>
                         <th>Reproducir</th>
-                        <th>Album</th>
+                        <th>Álbum</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,6 @@
                         </td>
                     </tr>
                 </tbody>
-    
             </table>
         </div>
     </div>

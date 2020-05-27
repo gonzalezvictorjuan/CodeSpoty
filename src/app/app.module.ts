@@ -12,13 +12,13 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/compartido/navbar/navbar.component';
 import { TarjetasComponent } from './components/compartido/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/compartido/loading/loading.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { ErrorComponent } from './components/compartido/error/error.component';
+import { AccessTokenComponent } from './components/access-token/access-token.component';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
-import { ErrorComponent } from './components/compartido/error/error.component';
-import { AccessTokenComponent } from './components/access-token/access-token.component';
-import { PlaylistComponent } from './components/playlist/playlist.component';
 
 @NgModule({
   declarations: [

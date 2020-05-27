@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -6,9 +6,9 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-buscar',
   templateUrl: './buscar.component.html',
-  styleUrls: ['./buscar.component.scss']
+  styleUrls: []
 })
-export class BuscarComponent implements OnInit, OnDestroy {
+export class BuscarComponent implements OnDestroy {
 
     artistas: any[] = [];
     loading: boolean;
@@ -20,9 +20,6 @@ export class BuscarComponent implements OnInit, OnDestroy {
 
     constructor( private _spotify: SpotifyService ) {
         this.error = false;
-    }
-
-    ngOnInit(): void {
     }
 
     buscar(termino: string): void {
@@ -38,7 +35,11 @@ export class BuscarComponent implements OnInit, OnDestroy {
                 (error) => {
                     this.loading = false;
                     this.error = true;
-                    this.textoError = error.error.error.message || 'Error con la API de Spotify';
+                    if (error.error.error.message) {
+                        this.textoError = error.error.error.message;
+                    } else {
+                        this.textoError = 'Error con la API de Spotify';
+                    }
                 }
             );
     }

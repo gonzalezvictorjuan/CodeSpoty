@@ -13,6 +13,7 @@ export class PlaylistComponent implements OnInit, OnDestroy {
     data: any;
 
     loading: boolean;
+    loadingIframe: boolean;
 
     error: boolean;
     textoError: string;
@@ -23,6 +24,7 @@ export class PlaylistComponent implements OnInit, OnDestroy {
 
     constructor( private _spotify: SpotifyService ) {
         this.loading = true;
+        this.loadingIframe = true;
         this.error = false;
     }
 
@@ -31,12 +33,16 @@ export class PlaylistComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(
                 (data: any) => {
+                    // console.log(data);
                     this.data = data;
-                    console.log(data);
                     this.loading = false;
                 },
                 (error) => {
-                    this.textoError = error.error.error.message || 'Error con la API de Spotify';
+                    if (error.error.error.message) {
+                        this.textoError = error.error.error.message;
+                    } else {
+                        this.textoError = 'Error con la API de Spotify';
+                    }
                     this.loading = false;
                     this.error = true;
                 }
@@ -46,5 +52,11 @@ export class PlaylistComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
+    }
+
+    load(): void {
+        setTimeout(() => {
+            this.loadingIframe = false;
+        }, 5000);
     }
 }
