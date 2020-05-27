@@ -21,13 +21,22 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li (click)="clickToggle()">
+            <li class="nav-item mr-1" (click)="clickToggle()">
                 <a href="https://github.com/whitefox1993/CodeSpoty" title="CodeSpoty" target="_blank" class="social-buttons__button social-button social-button--github" aria-label="GitHub">
                     <span class="social-button__inner">
                         <i class="fab fa-github-alt"></i>
                     </span>
                 </a>
             </li>
+            <li class="nav-item" (click)="clickToggle()">
+                <a href="mailto:g.victor.juan@gmail.com" title="Gmail" target="_blank"
+                    class="social-buttons__button social-button social-button--gmail" aria-label="Gmail">
+                    <span class="social-button__inner">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>
